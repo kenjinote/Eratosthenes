@@ -33,8 +33,8 @@ DWORD WINAPI ThreadFunc(LPVOID p)
 	SetDlgItemText((HWND)p, IDC_DISP, TEXT("ファイルに出力しています..."));
 	const HANDLE hFile = CreateFile(TEXT("prime32.txt"), GENERIC_WRITE, 0, 0, CREATE_ALWAYS, 0, 0);
 	CHAR szTemp[1024];
+	DWORD d;
 	for (i = 2; i; i++) {
-		DWORD d;
 		if (!b) { goto EXIT2; }
 		if (getprime(prime_table, i) == 0) {
 			wsprintfA(szTemp, "%u\r\n", i);
